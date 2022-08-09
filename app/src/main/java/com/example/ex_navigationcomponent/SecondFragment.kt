@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.ex_navigationcomponent.databinding.FragmentSecondBinding
 
 
@@ -25,6 +26,7 @@ class SecondFragment : Fragment() {
         return binding.root
     }
 
+    private var address = "Ha Noi"
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
@@ -37,10 +39,15 @@ class SecondFragment : Fragment() {
 
         binding.txtUser.text = user.toString()
 
+
         binding.openFragment3.setOnClickListener {
             //2 cach
             //controller.navigate(R.id.thirdFragment)
-            controller.navigate(R.id.action_secondFragment_to_thirdFragment)
+
+            val action = SecondFragmentDirections.actionSecondFragmentToThirdFragment(user, address)
+
+
+            controller.navigate(action)
         }
 
 

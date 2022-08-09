@@ -37,6 +37,7 @@ class FirstFragment : Fragment() {
             )
             controller.navigate(R.id.action_firstFragment_to_secondFragment, bundle)
 
+
         }
 
         binding.openFragment3.setOnClickListener {
