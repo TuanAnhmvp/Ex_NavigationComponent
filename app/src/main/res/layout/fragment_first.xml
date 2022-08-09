@@ -14,6 +14,28 @@
         android:layout_height="wrap_content"
         android:text="this is first Fragment"/>
 
+    <EditText
+        android:id="@+id/edt_name"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edt_nameuser"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/edt_ageuser"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/open_fragment_2"
         android:text="open fragment 2"

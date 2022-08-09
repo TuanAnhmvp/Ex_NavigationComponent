@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.ex_navigationcomponent.databinding.FragmentFirstBinding
 
@@ -29,7 +30,12 @@ class FirstFragment : Fragment() {
         val controller = findNavController()
 
         binding.openFragment2.setOnClickListener {
-            controller.navigate(R.id.secondFragment)
+            val user = User(binding.edtNameuser.text.toString().trim(), binding.edtAgeuser.text.toString().trim().toInt())
+
+            val bundle = bundleOf(
+                "userName" to binding.edtName.text.toString().trim(), "user" to user
+            )
+            controller.navigate(R.id.action_firstFragment_to_secondFragment, bundle)
 
         }
 

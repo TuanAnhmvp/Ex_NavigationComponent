@@ -29,11 +29,21 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
 
+        val bundle = arguments
+        val userName  = bundle?.getString("userName")
+
+        val user = bundle?.getSerializable("user") as User
+        binding.txtName.text = userName
+
+        binding.txtUser.text = user.toString()
+
         binding.openFragment3.setOnClickListener {
             //2 cach
             //controller.navigate(R.id.thirdFragment)
             controller.navigate(R.id.action_secondFragment_to_thirdFragment)
         }
+
+
     }
 
     /*override fun onActivityCreated(savedInstanceState: Bundle?) {
