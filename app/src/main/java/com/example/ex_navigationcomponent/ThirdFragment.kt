@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.ex_navigationcomponent.databinding.FragmentSecondBinding
 import com.example.ex_navigationcomponent.databinding.FragmentThirdBinding
@@ -37,6 +39,13 @@ class ThirdFragment : Fragment() {
 
         binding.txtUser.text = "$user"
         binding.txtUserName.text = userName
+
+        //pass data to depplink
+        val controller = findNavController()
+        val bundle = bundleOf("tuananh" to userName)
+        controller.navigate(R.id.action_thirdFragment_to_deepLinkFragment, bundle)
+
+
     }
 
 

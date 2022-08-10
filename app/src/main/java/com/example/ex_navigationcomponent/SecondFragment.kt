@@ -26,7 +26,7 @@ class SecondFragment : Fragment() {
         return binding.root
     }
 
-    private var address = "Ha Noi"
+    private var address = "Tuan Anh"
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val controller = findNavController()
